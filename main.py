@@ -8,7 +8,7 @@ def encode(key, message):
 
     for i in range(0, len(message), 3):
         eggs = message[i:i+3]
-        eggs = text_to_ascii_decimal(eggs)
+        eggs = string_to_decimal(eggs)
 
         for _ in range(0, 3):
             eggs = eggs ^ (key[eggs&0x3] << 8)
@@ -24,7 +24,7 @@ def encode(key, message):
 
 key = [0, 18, 19, 20]
 
-message = "This is a secret message"
+message = "The answer is a secret message"
 
 print("Original message:")
 print(message)
